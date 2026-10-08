@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subha Vivaha | The Royal Canvas - Premium Nepali Wedding Stories</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-dark': '#120203',
+                        'royal-red': '#3B0204',
+                        'royal-crimson': '#5C0609',
+                        'royal-accent': '#7A0A0F',
+                        'gold-light': '#F3E5AB',
+                        'gold-primary': '#D4AF37',
+                        'gold-dark': '#AA7C11',
+                        'gold-rich': '#E6CA65',
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        script: ['Great Vibes', 'cursive'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA7C11 100%)',
+                        'gold-gradient-subtle': 'linear-gradient(135deg, rgba(212,175,55,0.2) 0%, rgba(212,175,55,0.05) 100%)',
+                        'red-gradient': 'linear-gradient(180deg, #240102 0%, #3B0204 50%, #120203 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #120203;
+            color: #E2D9D5;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .gold-text-glow {
+            text-shadow: 0 0 12px rgba(212, 175, 55, 0.4), 0 0 25px rgba(212, 175, 55, 0.2);
+        }
+
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15), inset 0 0 15px rgba(212, 175, 55, 0.08);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 30%, #B38728 70%, #FBF5B7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border {
+            border-image: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728) 1;
+        }
+
+        .mandala-bg {
+            background-image: radial-gradient(circle, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        /* Particles container */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #120203;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4A080B;
+            border: 1px solid #D4AF37;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        .glass-card {
+            background: rgba(59, 2, 4, 0.45);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.2);
+        }
+
+        /* Canvas Particle effect styling */
+        canvas.particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-royal-dark/90 backdrop-blur-md border-b border-gold-primary/20" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full border border-gold-primary/60 flex items-center justify-center bg-royal-crimson/50 group-hover:border-gold-primary transition">
+                        <i class="fa-solid font-serif text-gold-primary text-xl">✨</i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl font-bold tracking-wider gold-gradient-text">SUBHA VIVAHA</span>
+                        <span class="text-[9px] tracking-[0.3em] uppercase text-gold-light/70 font-sans">Royal Nepali Stories</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-gold-light/80 font-medium">
+                    <a href="#about" class="hover:text-gold-primary transition duration-300 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold-primary hover:after:w-full after:transition-all">The Legacy</a>
+                    <a href="#gallery" class="hover:text-gold-primary transition duration-300 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold-primary hover:after:w-full after:transition-all">Portfolio</a>
+                    <a href="#films" class="hover:text-gold-primary transition duration-300 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold-primary hover:after:w-full after:transition-all">Cinema</a>
+                    <a href="#rituals" class="hover:text-gold-primary transition duration-300 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold-primary hover:after:w-full after:transition-all">Rituals</a>
+                    <a href="#collections" class="hover:text-gold-primary transition duration-300 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold-primary hover:after:w-full after:transition-all">Collections</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <button onclick="openBookingModal()" class="px-6 py-2.5 rounded-full border border-gold-primary text-gold-light hover:bg-gold-primary hover:text-royal-dark transition duration-300 text-xs font-semibold uppercase tracking-widest shadow-lg shadow-gold-primary/10">
+                        Check Availability
+                    </button>
+                </div>
+
+                <!-- Mobile menu toggle -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gold-primary text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-royal-dark border-b border-gold-primary/30 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-gold-light/90 hover:text-gold-primary uppercase tracking-wider text-sm border-b border-white/5">The Legacy</a>
+            <a href="#gallery" class="block py-2 text-gold-light/90 hover:text-gold-primary uppercase tracking-wider text-sm border-b border-white/5">Portfolio</a>
+            <a href="#films" class="block py-2 text-gold-light/90 hover:text-gold-primary uppercase tracking-wider text-sm border-b border-white/5">Cinema</a>
+            <a href="#rituals" class="block py-2 text-gold-light/90 hover:text-gold-primary uppercase tracking-wider text-sm border-b border-white/5">Rituals</a>
+            <a href="#collections" class="block py-2 text-gold-light/90 hover:text-gold-primary uppercase tracking-wider text-sm border-b border-white/5">Collections</a>
+            <button onclick="openBookingModal()" class="w-full mt-4 py-3 rounded-full bg-gold-primary text-royal-dark font-bold uppercase tracking-widest text-xs">
+                Check Availability
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Canvas for Gold Dust Particles -->
+        <canvas id="gold-particles" class="particles z-10"></canvas>
+
+        <!-- Background Image with Dark Vignette Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=2000&q=80" alt="Nepali Bride & Groom" class="w-full h-full object-cover opacity-25 scale-105 transform animate-pulse duration-[10000ms]">
+            <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-royal-crimson/60 to-royal-dark"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-royal-dark/70 to-royal-dark"></div>
+        </div>
+
+        <!-- Royal Content Frame -->
+        <div class="relative z-20 max-w-5xl mx-auto px-4 text-center my-auto py-16">
+            <!-- Decorative Top Emblem -->
+            <div class="flex items-center justify-center gap-4 mb-6">
+                <div class="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-gold-primary"></div>
+                <div class="text-gold-primary text-lg tracking-widest uppercase font-serif flex items-center gap-2">
+                    <span class="text-xs">❖</span> ESTD. 2014 <span class="text-xs">❖</span>
+                </div>
+                <div class="h-[1px] w-12 sm:w-24 bg-gradient-to-l from-transparent to-gold-primary"></div>
+            </div>
+
+            <!-- Main Calligraphy Accent -->
+            <p class="font-script text-4xl sm:text-6xl text-gold-rich mb-2 drop-shadow-md">The Royal Canvas of</p>
+            
+            <!-- Main Title -->
+            <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white mb-6 leading-none gold-text-glow">
+                SUBHA VIVAHA
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-xl text-gold-light/80 font-light tracking-wide mb-10 leading-relaxed font-serif italic">
+                Immortalizing Nepal's timeless royal heritage, sacred vows, and grand matrimony through high-editorial visual storytelling.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+                <a href="#gallery" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-gold-primary via-gold-rich to-gold-dark text-royal-dark font-bold text-xs uppercase tracking-[0.2em] shadow-lg shadow-gold-primary/20 hover:scale-105 transition-all duration-300">
+                    Explore Royal Gallery
+                </a>
+                <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-4 rounded-full border border-gold-primary/60 text-gold-light hover:bg-gold-primary/10 font-medium text-xs uppercase tracking-[0.2em] transition-all duration-300 glass-card">
+                    Reserve Your Dates
+                </button>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="mt-16 animate-bounce">
+                <a href="#about" class="text-gold-primary/60 hover:text-gold-primary text-xl transition">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Brand Essence Section -->
+    <section id="about" class="py-24 relative z-20 bg-royal-dark mandala-bg border-y border-gold-primary/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Image Collage -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden border-2 border-gold-primary/40 shadow-2xl p-2 bg-royal-crimson/30">
+                        <img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=1000&q=80" alt="Royal Wedding Heritage" class="rounded-xl w-full h-[450px] object-cover filter brightness-90 contrast-110">
+                    </div>
+                    <!-- Secondary Floating Decorative Frame -->
+                    <div class="absolute -bottom-6 -right-6 w-2/3 z-20 hidden sm:block p-2 rounded-xl bg-royal-dark border border-gold-primary/50 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Nepali Jewelry & Details" class="rounded-lg h-48 w-full object-cover">
+                    </div>
+                    <!-- Traditional Gold Line Accent -->
+                    <div class="absolute -top-6 -left-6 w-24 h-24 border-t-2 border-l-2 border-gold-primary/60 pointer-events-none"></div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <span class="h-[1px] w-8 bg-gold-primary"></span>
+                        <span class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-primary">Our Aesthetic philosophy</span>
+                    </div>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight">
+                        Crafting Timeless Heirlooms Of <span class="gold-gradient-text italic font-normal">Nepali Royalty</span>
+                    </h2>
+                    <p class="text-gold-light/70 text-base leading-relaxed font-light">
+                        Nepali weddings are not mere events; they are sacred symphonies of ancient rituals, vibrant shades of crimson and gold, and deep emotional bonds. At <strong class="text-gold-primary">Subha Vivaha</strong>, we document every moment with the grandeur of royal historical chronicles.
+                    </p>
+                    <p class="text-gold-light/70 text-base leading-relaxed font-light">
+                        From the resonant sound of the *Shankha* and *Panchai Baja* to the delicate placement of the *Sindoor* and *Pote*, our master visual artists capture high-fashion imagery while honoring authentic traditions.
+                    </p>
+
+                    <!-- Key Highlights Grid -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-gold-primary/20">
+                        <div class="text-center p-3 rounded-lg bg-royal-crimson/20 border border-gold-primary/20">
+                            <span class="block font-serif text-3xl font-bold text-gold-primary">250+</span>
+                            <span class="text-[11px] uppercase tracking-wider text-gold-light/70">Royal Weddings</span>
+                        </div>
+                        <div class="text-center p-3 rounded-lg bg-royal-crimson/20 border border-gold-primary/20">
+                            <span class="block font-serif text-3xl font-bold text-gold-primary">12+</span>
+                            <span class="text-[11px] uppercase tracking-wider text-gold-light/70">Years Legacy</span>
+                        </div>
+                        <div class="text-center p-3 rounded-lg bg-royal-crimson/20 border border-gold-primary/20">
+                            <span class="block font-serif text-3xl font-bold text-gold-primary">15</span>
+                            <span class="text-[11px] uppercase tracking-wider text-gold-light/70">Global Awards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filterable Gallery Section -->
+    <section id="gallery" class="py-24 relative z-20 bg-royal-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-primary block mb-2">Curated Visual Archive</span>
+                <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white mb-4">The Royal Portfolio</h2>
+                <p class="text-gold-light/70 font-serif italic text-lg">Browse through our handpicked collection of royal moments across Nepal's finest celebrations.</p>
+                <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold-primary to-transparent mx-auto mt-6"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12">
+                <button onclick="filterGallery('all')" class="gallery-filter-btn active px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 border border-gold-primary bg-gold-primary text-royal-dark" data-filter="all">All Stories</button>
+                <button onclick="filterGallery('swayamvar')" class="gallery-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 border border-gold-primary/30 text-gold-light hover:border-gold-primary" data-filter="swayamvar">Swayamvar & Mandap</button>
+                <button onclick="filterGallery('mehendi')" class="gallery-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 border border-gold-primary/30 text-gold-light hover:border-gold-primary" data-filter="mehendi">Mehendi & Sangeet</button>
+                <button onclick="filterGallery('prewedding')" class="gallery-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 border border-gold-primary/30 text-gold-light hover:border-gold-primary" data-filter="prewedding">Pre-Wedding Editorial</button>
+                <button onclick="filterGallery('bridegroom')" class="gallery-filter-btn px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 border border-gold-primary/30 text-gold-light hover:border-gold-primary" data-filter="bridegroom">Bride & Groom</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
+
+                <!-- Item 1 -->
+                <div class="gallery-item swayamvar bridegroom group relative rounded-xl overflow-hidden glass-card cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80', 'The Sacred Swayamvar Vows', 'Kathmandu Durbar Square')">
+                    <div class="h-96 w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Royal Bride and Groom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-royal-dark/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <span class="text-[10px] uppercase tracking-widest text-gold-primary font-bold">Mandap Rituals</span>
+                        <h3 class="font-serif text-2xl text-white font-bold mb-1">The Sacred Swayamvar Vows</h3>
+                        <p class="text-gold-light/60 text-xs">Gokarna Forest Resort, Kathmandu</p>
+                    </div>
+                    <div class="absolute top-4 right-4 w-10 h-10 rounded-full border border-gold-primary/50 bg-royal-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-expand text-gold-primary text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="gallery-item mehendi group relative rounded-xl overflow-hidden glass-card cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=80', 'Intricate Crimson Mehendi', 'Heritage Courtyard Celebration')">
+                    <div class="h-96 w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80" alt="Henna Art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-royal-dark/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <span class="text-[10px] uppercase tracking-widest text-gold-primary font-bold">Mehendi Ceremony</span>
+                        <h3 class="font-serif text-2xl text-white font-bold mb-1">Crimson Floral Henna</h3>
+                        <p class="text-gold-light/60 text-xs">Babar Mahal Vilas, Kathmandu</p>
+                    </div>
+                    <div class="absolute top-4 right-4 w-10 h-10 rounded-full border border-gold-primary/50 bg-royal-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-expand text-gold-primary text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="gallery-item prewedding group relative rounded-xl overflow-hidden glass-card cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80', 'Elegance at Fewa Lake', 'Pokhara Mountain Backdrop')">
+                    <div class="h-96 w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Pre-wedding shoot" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-royal-dark/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <span class="text-[10px] uppercase tracking-widest text-gold-primary font-bold">Pre-Wedding Editorial</span>
+                        <h3 class="font-serif text-2xl text-white font-bold mb-1">Elegance at Fewa Lake</h3>
+                        <p class="text-gold-light/60 text-xs">Pokhara, Nepal</p>
+                    </div>
+                    <div class="absolute top-4 right-4 w-10 h-10 rounded-full border border-gold-primary/50 bg-royal-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-expand text-gold-primary text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="gallery-item bridegroom group relative rounded-xl overflow-hidden glass-card cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80', 'The Royal Bride Portrait', 'Velvet & Gold Accents')">
+                    <div class="h-96 w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" alt="Nepali Bride Portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-royal-dark/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <span class="text-[10px] uppercase tracking-widest text-gold-primary font-bold">Editorial Portrait</span>
+                        <h3 class="font-serif text-2xl text-white font-bold mb-1">The Royal Bride Portrait</h3>
+                        <p class="text-gold-light/60 text-xs">Soaltee Hotel, Kathmandu</p>
+                    </div>
+                    <div class="absolute top-4 right-4 w-10 h-10 rounded-full border border-gold-primary/50 bg-royal-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-expand text-gold-primary text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="gallery-item swayamvar group relative rounded-xl overflow-hidden glass-card cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=1200&q=80', 'The Sacred Kanyadaan', 'Vedic Fire Rituals')">
+                    <div class="h-96 w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80" alt="Sacred Mandap" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-royal-dark/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <span class="text-[10px] uppercase tracking-widest text-gold-primary font-bold">Jagya & Mandap</span>
+                        <h3 class="font-serif text-2xl text-white font-bold mb-1">The Sacred Kanyadaan</h3>
+                        <p class="text-gold-light/60 text-xs">Hyatt Regency, Kathmandu</p>
+                    </div>
+                    <div class="absolute top-4 right-4 w-10 h-10 rounded-full border border-gold-primary/50 bg-royal-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-expand text-gold-primary text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="gallery-item mehendi prewedding group relative rounded-xl overflow-hidden glass-card cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80', 'Royal Sangeet Night', 'Music, Lights & Joy')">
+                    <div class="h-96 w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Royal Reception" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-royal-dark/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <span class="text-[10px] uppercase tracking-widest text-gold-primary font-bold">Sangeet & Dance</span>
+                        <h3 class="font-serif text-2xl text-white font-bold mb-1">Royal Sangeet Gala</h3>
+                        <p class="text-gold-light/60 text-xs">The Dwarika's Hotel, Kathmandu</p>
+                    </div>
+                    <div class="absolute top-4 right-4 w-10 h-10 rounded-full border border-gold-primary/50 bg-royal-dark/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-expand text-gold-primary text-xs"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal for Gallery Image High Res Preview -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-royal-dark/95 backdrop-blur-xl flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-gold-primary text-3xl hover:text-white transition">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl w-full text-center space-y-4">
+            <div class="relative border-2 border-gold-primary/50 p-2 rounded-xl bg-royal-crimson/20">
+                <img id="lightbox-img" src="" alt="Enlarged Wedding Photo" class="max-h-[75vh] w-auto mx-auto rounded-lg object-contain">
+            </div>
+            <div>
+                <h3 id="lightbox-title" class="font-serif text-3xl text-white font-bold"></h3>
+                <p id="lightbox-desc" class="text-gold-light/70 text-sm font-light mt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Film Showcase (Cinematic Trailers) -->
+    <section id="films" class="py-24 relative z-20 bg-gradient-to-b from-royal-dark via-royal-crimson/30 to-royal-dark border-t border-gold-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-primary block mb-2">Moving Motion Pictures</span>
+                <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white mb-4">Cinematic Wedding Films</h2>
+                <p class="text-gold-light/70 font-serif italic text-lg">4K Ultra HD Cinema shot on 35mm equivalent anamorphic lenses with custom orchestral scores.</p>
+                <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold-primary to-transparent mx-auto mt-6"></div>
+            </div>
+
+            <!-- Featured Film Card -->
+            <div class="mb-16">
+                <div class="relative rounded-2xl overflow-hidden border-2 border-gold-primary/40 glass-card group">
+                    <div class="relative h-[480px] w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80" alt="Cinematic Film Banner" class="w-full h-full object-cover filter brightness-75 group-hover:scale-105 transition-transform duration-1000">
+                        <div class="absolute inset-0 bg-gradient-to-t from-royal-dark via-transparent to-royal-dark/60"></div>
+                        
+                        <!-- Center Custom Play Button -->
+                        <button onclick="playVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')" class="absolute inset-0 m-auto w-20 h-20 rounded-full bg-gold-primary/90 border-2 border-white flex items-center justify-center text-royal-dark text-2xl shadow-2xl hover:scale-110 hover:bg-white transition-all duration-300 group">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </button>
+                    </div>
+
+                    <div class="p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 bg-royal-dark/90">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-primary">Featured Feature Film</span>
+                            <h3 class="font-serif text-3xl font-bold text-white mt-1">Aarav & Devika: The Durbar Monologues</h3>
+                            <p class="text-gold-light/70 text-sm mt-1">Filmed at Babar Mahal & Gokarna Sanctuary • 8 min Master Cut</p>
+                        </div>
+                        <button onclick="playVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')" class="px-6 py-3 rounded-full border border-gold-primary text-gold-primary hover:bg-gold-primary hover:text-royal-dark transition text-xs uppercase font-bold tracking-widest">
+                            Watch Trailer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid of 2 Secondary Films -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Video Card 1 -->
+                <div class="glass-card rounded-xl overflow-hidden border border-gold-primary/30">
+                    <div class="relative h-64 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Trailer thumbnail" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-royal-dark/40 group-hover:bg-royal-dark/20 transition"></div>
+                        <button onclick="playVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')" class="absolute inset-0 m-auto w-14 h-14 rounded-full bg-royal-dark/80 border border-gold-primary text-gold-primary flex items-center justify-center hover:scale-110 transition">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-xl text-white font-bold">Rohan & Sneha — Symphony of the Hills</h4>
+                        <p class="text-gold-light/60 text-xs mt-2">Pokhara Lakefront Destination Wedding • 4K Cinema</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="glass-card rounded-xl overflow-hidden border border-gold-primary/30">
+                    <div class="relative h-64 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80" alt="Trailer thumbnail" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-royal-dark/40 group-hover:bg-royal-dark/20 transition"></div>
+                        <button onclick="playVideoModal('https://www.youtube.com/embed/dQw4w9WgXcQ')" class="absolute inset-0 m-auto w-14 h-14 rounded-full bg-royal-dark/80 border border-gold-primary text-gold-primary flex items-center justify-center hover:scale-110 transition">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-xl text-white font-bold">Prajwal & Shruti — The Newari Heritage Affair</h4>
+                        <p class="text-gold-light/60 text-xs mt-2">Patan Durbar Square Rituals • Traditional Soundscapes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal Player -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden bg-royal-dark/95 backdrop-blur-xl flex items-center justify-center p-4">
+        <button onclick="closeVideoModal()" class="absolute top-6 right-6 text-gold-primary text-3xl hover:text-white transition">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="w-full max-w-4xl aspect-video rounded-xl overflow-hidden border-2 border-gold-primary/50 shadow-2xl">
+            <iframe id="video-iframe" class="w-full h-full" src="" title="Video Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Interactive Sacred Rituals Feature -->
+    <section id="rituals" class="py-24 relative z-20 bg-royal-dark mandala-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-primary block mb-2">Sacred Customs & Heritage</span>
+                <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white mb-4">Nepali Wedding Traditions</h2>
+                <p class="text-gold-light/70 font-serif italic text-lg">Click through the sacred steps of traditional Nepali matrimony to see how we document each sacred moment.</p>
+                <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold-primary to-transparent mx-auto mt-6"></div>
+            </div>
+
+            <!-- Ritual Selector Tabs -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-10">
+                <button onclick="showRitual(0)" class="ritual-tab-btn active p-4 rounded-xl border border-gold-primary/40 bg-royal-crimson/40 text-center transition hover:border-gold-primary" data-index="0">
+                    <span class="block text-gold-primary text-lg mb-1"><i class="fa-solid fa-drum"></i></span>
+                    <span class="text-xs uppercase font-bold text-white block">1. Janti</span>
+                </button>
+                <button onclick="showRitual(1)" class="ritual-tab-btn p-4 rounded-xl border border-gold-primary/20 bg-royal-dark text-center transition hover:border-gold-primary" data-index="1">
+                    <span class="block text-gold-primary text-lg mb-1"><i class="fa-solid fa-ring"></i></span>
+                    <span class="text-xs uppercase font-bold text-white block">2. Swayamvar</span>
+                </button>
+                <button onclick="showRitual(2)" class="ritual-tab-btn p-4 rounded-xl border border-gold-primary/20 bg-royal-dark text-center transition hover:border-gold-primary" data-index="2">
+                    <span class="block text-gold-primary text-lg mb-1"><i class="fa-solid fa-hands-holding"></i></span>
+                    <span class="text-xs uppercase font-bold text-white block">3. Kanyadaan</span>
+                </button>
+                <button onclick="showRitual(3)" class="ritual-tab-btn p-4 rounded-xl border border-gold-primary/20 bg-royal-dark text-center transition hover:border-gold-primary" data-index="3">
+                    <span class="block text-gold-primary text-lg mb-1"><i class="fa-solid fa-fire"></i></span>
+                    <span class="text-xs uppercase font-bold text-white block">4. Jagya</span>
+                </button>
+                <button onclick="showRitual(4)" class="ritual-tab-btn p-4 rounded-xl border border-gold-primary/20 bg-royal-dark text-center transition hover:border-gold-primary" data-index="4">
+                    <span class="block text-gold-primary text-lg mb-1"><i class="fa-solid fa-gem"></i></span>
+                    <span class="text-xs uppercase font-bold text-white block">5. Sindoor-Pote</span>
+                </button>
+                <button onclick="showRitual(5)" class="ritual-tab-btn p-4 rounded-xl border border-gold-primary/20 bg-royal-dark text-center transition hover:border-gold-primary" data-index="5">
+                    <span class="block text-gold-primary text-lg mb-1"><i class="fa-solid fa-champagne-glasses"></i></span>
+                    <span class="text-xs uppercase font-bold text-white block">6. Reception</span>
+                </button>
+            </div>
+
+            <!-- Ritual Display Card Container -->
+            <div class="glass-card rounded-2xl p-8 md:p-12 border-2 border-gold-primary/40 relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center" id="ritual-content font-serif">
+                    <div class="lg:col-span-7 space-y-4">
+                        <span class="text-xs uppercase font-bold tracking-widest text-gold-primary" id="ritual-step">Step 01 • Grand Procession</span>
+                        <h3 class="font-serif text-3xl sm:text-4xl text-white font-bold" id="ritual-title">Janti Arrival & Panchai Baja</h3>
+                        <p class="text-gold-light/80 leading-relaxed font-light text-base" id="ritual-desc">
+                            The groom’s grand arrival accompanied by family, traditional *Panchai Baja* folk musicians, and joyous dancing. We document the electrifying energy, traditional brass instruments, and warm ceremonial welcome by the bride's family with garland greetings.
+                        </p>
+                        <div class="pt-4 flex items-center gap-4 text-xs text-gold-light/60">
+                            <span><i class="fa-solid fa-camera text-gold-primary mr-2"></i> High-Speed Action Photography</span>
+                            <span><i class="fa-solid fa-video text-gold-primary mr-2"></i> Slow-Motion Cinematic Audio Shots</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <div class="relative rounded-xl overflow-hidden border border-gold-primary/40 shadow-2xl h-80">
+                            <img id="ritual-img" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Ritual Picture" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Royal Packages & Pricing Collections -->
+    <section id="collections" class="py-24 relative z-20 bg-gradient-to-b from-royal-dark via-royal-crimson/20 to-royal-dark border-t border-gold-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-primary block mb-2">Tailored Bespoke Experiences</span>
+                <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white mb-4">Royal Collections</h2>
+                <p class="text-gold-light/70 font-serif italic text-lg">Comprehensive photography and cinematography services for discerning couples.</p>
+                <div class="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold-primary to-transparent mx-auto mt-6"></div>
+            </div>
+
+            <!-- 3 Pricing Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Package 1 -->
+                <div class="glass-card rounded-2xl p-8 relative flex flex-col justify-between border border-gold-primary/30 hover:border-gold-primary transition duration-500">
+                    <div>
+                        <div class="text-center pb-6 border-b border-gold-primary/20">
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-primary">The Heritage Collection</span>
+                            <h3 class="font-serif text-3xl font-bold text-white mt-2">Essential Royal</h3>
+                            <div class="mt-4">
+                                <span class="text-xs font-light text-gold-light/60">Starting from</span>
+                                <p class="font-serif text-3xl font-bold text-gold-primary">NPR 2,50,000</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 my-8 text-sm text-gold-light/80 font-light">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-primary text-xs"></i> 2 Days Complete Event Coverage</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-primary text-xs"></i> 2 Senior Photographers + 2 Cinematographers</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-primary text-xs"></i> 1 Premium Handcrafted Velvet Album (40 Pages)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-primary text-xs"></i> 3-5 Min Cinematic Teaser Trailer</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-primary text-xs"></i> Full Ceremony Edited Documentary Video</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-primary text-xs"></i> Color-Graded High-Res Online Gallery</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Heritage Collection')" class="w-full py-3.5 rounded-full border border-gold-primary/60 text-gold-light hover:bg-gold-primary hover:text-royal-dark font-bold text-xs uppercase tracking-widest transition">
+                        Select Collection
+                    </button>
+                </div>
+
+                <!-- Package 2 (Most Popular Highlighted) -->
+                <div class="glass-card rounded-2xl p-8 relative flex flex-col justify-between border-2 border-gold-primary shadow-2xl bg-royal-crimson/40 scale-105">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-gold-primary via-gold-rich to-gold-dark text-royal-dark text-[10px] font-extrabold uppercase tracking-widest px-4 py-1 rounded-full shadow-md">
+                        Most Requested
+                    </div>
+                    <div>
+                        <div class="text-center pb-6 border-b border-gold-primary/30 mt-2">
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-primary">The Durbar Legacy</span>
+                            <h3 class="font-serif text-3xl font-bold text-white mt-2">Grand Durbar</h3>
+                            <div class="mt-4">
+                                <span class="text-xs font-light text-gold-light/60">Starting from</span>
+                                <p class="font-serif text-4xl font-bold gold-gradient-text">NPR 4,50,000</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 my-8 text-sm text-gold-light/90 font-light">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-star text-gold-primary text-xs"></i> 3 Days Full Coverage (Mehendi, Swayamvar, Reception)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-star text-gold-primary text-xs"></i> Pre-Wedding Editorial Shoot Included</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-star text-gold-primary text-xs"></i> 4 Master Photographers + 3 Cinematographers</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-star text-gold-primary text-xs"></i> 4K Drone Aerial Cinematography</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-star text-gold-primary text-xs"></i> 2 Italian Gold-Embossed Photobooks</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-star text-gold-primary text-xs"></i> 5-8 Min Cinematic Feature Film + Same Day Edit</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('The Durbar Legacy')" class="w-full py-4 rounded-full bg-gradient-to-r from-gold-primary via-gold-rich to-gold-dark text-royal-dark font-extrabold text-xs uppercase tracking-widest shadow-xl hover:scale-105 transition">
+                        Reserve The Durbar
+                    </button>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="glass-card rounded-2xl p-8 relative flex flex-col justify-between border border-gold-primary/30 hover:border-gold-primary transition duration-500">
+                    <div>
+                        <div class="text-center pb-6 border-b border-gold-primary/20">
+                            <span class="text-xs font-bold uppercase tracking-widest text-gold-primary">The Royalty Collection</span>
+                            <h3 class="font-serif text-3xl font-bold text-white mt-2">Imperial Royalty</h3>
+                            <div class="mt-4">
+                                <span class="text-xs font-light text-gold-light/60">Bespoke Destination</span>
+                                <p class="font-serif text-3xl font-bold text-gold-primary">Custom Quote</p>
+                            </div>
+                        </div>
+                        <ul class="space-y-4 my-8 text-sm text-gold-light/80 font-light">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-primary text-xs"></i> Multi-Day International & Destination Weddings</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-primary text-xs"></i> Dedicated Master Creative Director</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-primary text-xs"></i> Unlimited Crew & Full FPV Drone Coverage</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-primary text-xs"></i> Custom Hand-Crafted Wooden Keepsake Boxes</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-primary text-xs"></i> 35mm Analog Film Special Feature Shoot</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-primary text-xs"></i> Priority Live Streaming for International Guests</li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('The Royalty Collection')" class="w-full py-3.5 rounded-full border border-gold-primary/60 text-gold-light hover:bg-gold-primary hover:text-royal-dark font-bold text-xs uppercase tracking-widest transition">
+                        Request Proposal
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials / Royal Love Stories -->
+    <section class="py-24 relative z-20 bg-royal-dark border-t border-gold-primary/20 mandala-bg">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-primary block mb-2">Words From Our Couples</span>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white mb-12">Royal Love Stories</h2>
+
+            <div class="glass-card rounded-2xl p-8 sm:p-12 border border-gold-primary/30 relative">
+                <i class="fa-solid fa-quote-left text-4xl text-gold-primary/30 absolute top-6 left-6"></i>
+                
+                <div id="testimonial-container" class="min-h-[160px] flex flex-col justify-center">
+                    <p id="testimonial-text" class="font-serif text-xl sm:text-2xl text-gold-light/90 italic leading-relaxed">
+                        "Subha Vivaha captured our wedding at Babar Mahal Mahal with such majestic grace. Looking at our photos and video feels like stepping into a royal Nepalese historical period drama. They preserved every sacred emotion!"
+                    </p>
+                    <div class="mt-6">
+                        <h4 id="testimonial-author" class="font-bold text-gold-primary text-lg">Prashant & Ananya Shah</h4>
+                        <p id="testimonial-location" class="text-xs text-gold-light/60 uppercase tracking-widest">Kathmandu • Dec 2025</p>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <div class="flex items-center justify-center gap-4 mt-8">
+                    <button onclick="prevTestimonial()" class="w-10 h-10 rounded-full border border-gold-primary/40 text-gold-primary hover:bg-gold-primary hover:text-royal-dark transition flex items-center justify-center">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <div class="flex gap-2" id="testimonial-dots">
+                        <span class="w-2.5 h-2.5 rounded-full bg-gold-primary"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-gold-primary/30"></span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-gold-primary/30"></span>
+                    </div>
+                    <button onclick="nextTestimonial()" class="w-10 h-10 rounded-full border border-gold-primary/40 text-gold-primary hover:bg-gold-primary hover:text-royal-dark transition flex items-center justify-center">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Availability Modal / Form -->
+    <div id="booking-modal" class="fixed inset-0 z-50 hidden bg-royal-dark/95 backdrop-blur-xl flex items-center justify-center p-4 overflow-y-auto">
+        <div class="relative w-full max-w-2xl glass-card rounded-2xl p-8 border-2 border-gold-primary shadow-2xl my-8">
+            <button onclick="closeBookingModal()" class="absolute top-6 right-6 text-gold-primary text-2xl hover:text-white transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-8">
+                <span class="text-xs uppercase font-bold tracking-widest text-gold-primary">Reserve Your Dates</span>
+                <h3 class="font-serif text-3xl sm:text-4xl text-white font-bold mt-1">Royal Availability Inquiry</h3>
+                <p class="text-gold-light/60 text-xs mt-1">We accept a limited number of high-editorial weddings each season.</p>
+            </div>
+
+            <form id="booking-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gold-light/80 mb-2">Groom's Name</label>
+                        <input type="text" required placeholder="e.g. Aarav Sharma" class="w-full bg-royal-dark/80 border border-gold-primary/30 rounded-lg px-4 py-3 text-white placeholder-gold-light/30 focus:outline-none focus:border-gold-primary text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gold-light/80 mb-2">Bride's Name</label>
+                        <input type="text" required placeholder="e.g. Devika Rana" class="w-full bg-royal-dark/80 border border-gold-primary/30 rounded-lg px-4 py-3 text-white placeholder-gold-light/30 focus:outline-none focus:border-gold-primary text-sm">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gold-light/80 mb-2">Email Address</label>
+                        <input type="email" required placeholder="royal@wedding.com" class="w-full bg-royal-dark/80 border border-gold-primary/30 rounded-lg px-4 py-3 text-white placeholder-gold-light/30 focus:outline-none focus:border-gold-primary text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gold-light/80 mb-2">Phone / WhatsApp</label>
+                        <input type="tel" required placeholder="+977 9800000000" class="w-full bg-royal-dark/80 border border-gold-primary/30 rounded-lg px-4 py-3 text-white placeholder-gold-light/30 focus:outline-none focus:border-gold-primary text-sm">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gold-light/80 mb-2">Tentative Wedding Date</label>
+                        <input type="date" required class="w-full bg-royal-dark/80 border border-gold-primary/30 rounded-lg px-4 py-3 text-white placeholder-gold-light/30 focus:outline-none focus:border-gold-primary text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gold-light/80 mb-2">Preferred Collection</label>
+                        <select id="modal-package-select" class="w-full bg-royal-dark/80 border border-gold-primary/30 rounded-lg px-4 py-3 text-gold-light/90 focus:outline-none focus:border-gold-primary text-sm">
+                            <option value="Heritage Collection">The Heritage Collection</option>
+                            <option value="The Durbar Legacy">The Durbar Legacy</option>
+                            <option value="The Royalty Collection">The Royalty Collection (Custom)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase font-bold text-gold-light/80 mb-2">Venue Location & Details</label>
+                    <textarea rows="3" placeholder="Tell us about your wedding venue, city (e.g. Kathmandu, Pokhara), and vision..." class="w-full bg-royal-dark/80 border border-gold-primary/30 rounded-lg px-4 py-3 text-white placeholder-gold-light/30 focus:outline-none focus:border-gold-primary text-sm"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 rounded-full bg-gradient-to-r from-gold-primary via-gold-rich to-gold-dark text-royal-dark font-extrabold text-xs uppercase tracking-[0.2em] shadow-xl hover:scale-[1.02] transition">
+                    Send Royal Inquiry
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Confirmation Dialog Modal -->
+    <div id="confirmation-modal" class="fixed inset-0 z-50 hidden bg-royal-dark/95 backdrop-blur-xl flex items-center justify-center p-4">
+        <div class="glass-card rounded-2xl p-8 border-2 border-gold-primary text-center max-w-md space-y-4">
+            <div class="w-16 h-16 rounded-full bg-gold-primary/20 border border-gold-primary flex items-center justify-center mx-auto text-gold-primary text-2xl">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+            <h3 class="font-serif text-3xl font-bold text-white">Namaste & Thank You</h3>
+            <p class="text-gold-light/80 text-sm font-light">Your royal inquiry has been received. Our senior creative director will reach out within 24 hours to schedule your private consultation.</p>
+            <button onclick="closeConfirmationModal()" class="px-8 py-3 rounded-full bg-gold-primary text-royal-dark font-bold text-xs uppercase tracking-widest mt-4">
+                Close Window
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-royal-dark border-t border-gold-primary/20 pt-16 pb-8 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-gold-primary/10">
+                <!-- Col 1 -->
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full border border-gold-primary flex items-center justify-center text-gold-primary text-sm">✨</div>
+                        <span class="font-serif text-2xl font-bold tracking-wider gold-gradient-text">SUBHA VIVAHA</span>
+                    </div>
+                    <p class="text-gold-light/60 text-xs font-light max-w-sm leading-relaxed">
+                        Kathmandu's premier high-editorial Nepali wedding photography & cinematography studio. Dedicated to preserving royal heritage, culture, and eternal love stories.
+                    </p>
+                    <div class="flex gap-4 text-gold-primary pt-2">
+                        <a href="#" class="w-9 h-9 rounded-full border border-gold-primary/40 flex items-center justify-center hover:bg-gold-primary hover:text-royal-dark transition"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full border border-gold-primary/40 flex items-center justify-center hover:bg-gold-primary hover:text-royal-dark transition"><i class="fa-brands fa-youtube text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full border border-gold-primary/40 flex items-center justify-center hover:bg-gold-primary hover:text-royal-dark transition"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full border border-gold-primary/40 flex items-center justify-center hover:bg-gold-primary hover:text-royal-dark transition"><i class="fa-solid fa-envelope text-sm"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="font-serif text-lg text-white font-bold mb-4 border-l-2 border-gold-primary pl-3">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs text-gold-light/70 uppercase tracking-wider">
+                        <li><a href="#about" class="hover:text-gold-primary transition">The Legacy</a></li>
+                        <li><a href="#gallery" class="hover:text-gold-primary transition">Photo Gallery</a></li>
+                        <li><a href="#films" class="hover:text-gold-primary transition">Cinematic Films</a></li>
+                        <li><a href="#rituals" class="hover:text-gold-primary transition">Cultural Rituals</a></li>
+                        <li><a href="#collections" class="hover:text-gold-primary transition">Royal Packages</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="font-serif text-lg text-white font-bold mb-4 border-l-2 border-gold-primary pl-3">Atelier Contact</h4>
+                    <ul class="space-y-3 text-xs text-gold-light/70">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-location-dot text-gold-primary"></i> Lazimpat, Kathmandu, Nepal</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-gold-primary"></i> +977 1 4420000 / +977 9851000000</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-paper-plane text-gold-primary"></i> concierge@subhavivaha.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 text-center text-xs text-gold-light/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p>&copy; 2026 Subha Vivaha Royal Wedding Cinema. All rights reserved.</p>
+                <p class="font-serif italic text-gold-primary/60">"Preserving Sacred Vows in Golden Frames"</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // 1. Gold Particle Background Canvas Animation
+        const canvas = document.getElementById('gold-particles');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const particlesArray = [];
+        const numberOfParticles = 60;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.speedX = Math.random() * 0.4 - 0.2;
+                this.speedY = Math.random() * -0.5 - 0.2; // Move upwards gently
+                this.opacity = Math.random() * 0.7 + 0.3;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.y < 0) {
+                    this.y = canvas.height;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+            draw() {
+                ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = '#D4AF37';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+        initParticles();
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // 2. Mobile Nav Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 3. Gallery Filtering
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const btns = document.querySelectorAll('.gallery-filter-btn');
+
+            btns.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('bg-gold-primary', 'text-royal-dark');
+                    btn.classList.remove('text-gold-light');
+                } else {
+                    btn.classList.remove('bg-gold-primary', 'text-royal-dark');
+                    btn.classList.add('text-gold-light');
+                }
+            });
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // 4. Lightbox Modal Logic
+        function openLightbox(imgUrl, title, desc) {
+            document.getElementById('lightbox-img').src = imgUrl;
+            document.getElementById('lightbox-title').innerText = title;
+            document.getElementById('lightbox-desc').innerText = desc;
+            document.getElementById('lightbox-modal').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').classList.add('hidden');
+        }
+
+        // 5. Video Player Modal Logic
+        function playVideoModal(videoSrc) {
+            document.getElementById('video-iframe').src = videoSrc;
+            document.getElementById('video-modal').classList.remove('hidden');
+        }
+
+        function closeVideoModal() {
+            document.getElementById('video-iframe').src = '';
+            document.getElementById('video-modal').classList.add('hidden');
+        }
+
+        // 6. Interactive Rituals Data & Logic
+        const ritualsData = [
+            {
+                step: 'Step 01 • Grand Procession',
+                title: 'Janti Arrival & Panchai Baja',
+                desc: 'The groom’s grand procession accompanied by traditional Panchai Baja folk musicians and rejoicing family. We capture the exuberant dancing, traditional brass instruments, and warm ceremonial welcome with garland greetings.',
+                img: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                step: 'Step 02 • Garland Exchange',
+                title: 'Sacred Swayamvar Ceremony',
+                desc: 'The bride and groom exchange Dubo (Bermuda grass) and Sayapatri (Marigold) garlands along with gold rings. This symbolizes eternal respect and unity. Captured in high editorial close-up cinematography.',
+                img: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                step: 'Step 03 • The Giving Away',
+                title: 'Kanyadaan Ritual',
+                desc: 'The most emotionally solemn ritual where parents bestow their daughter’s hand in marriage with holy water and chanting of Vedic mantras. Preserved with deep sensitivity and authenticity.',
+                img: 'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                step: 'Step 04 • Vedic Fire Altars',
+                title: 'Jagya & Saptapadi (7 Steps)',
+                desc: 'The holy fire (Havan) serves as the divine witness as the couple circles the sacred flames taking 7 sacred marital vows for prosperity, health, and lifelong friendship.',
+                img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                step: 'Step 05 • Eternal Mark',
+                title: 'Sindoor-Pote Ceremonial Mark',
+                desc: 'The groom applies vermilion (Sindoor) along the bride’s hair parting and places the holy red & gold bead necklace (Pote), sealing their matrimony in traditional splendor.',
+                img: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                step: 'Step 06 • Grand Celebration',
+                title: 'Durbar Gala Reception',
+                desc: 'An opulent feast celebrating the union with royal decor, high-fashion portraits, multi-tier wedding cakes, and celebratory toasts surrounded by loved ones.',
+                img: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80'
+            }
+        ];
+
+        function showRitual(index) {
+            const data = ritualsData[index];
+            document.getElementById('ritual-step').innerText = data.step;
+            document.getElementById('ritual-title').innerText = data.title;
+            document.getElementById('ritual-desc').innerText = data.desc;
+            document.getElementById('ritual-img').src = data.img;
+
+            const btns = document.querySelectorAll('.ritual-tab-btn');
+            btns.forEach((btn, idx) => {
+                if (idx === index) {
+                    btn.classList.add('bg-royal-crimson/40', 'border-gold-primary');
+                    btn.classList.remove('bg-royal-dark', 'border-gold-primary/20');
+                } else {
+                    btn.classList.remove('bg-royal-crimson/40', 'border-gold-primary');
+                    btn.classList.add('bg-royal-dark', 'border-gold-primary/20');
+                }
+            });
+        }
+
+        // 7. Testimonials Slider Logic
+        const testimonials = [
+            {
+                text: '"Subha Vivaha captured our wedding at Babar Mahal with such majestic grace. Looking at our photos and video feels like stepping into a royal Nepalese historical period drama. They preserved every sacred emotion!"',
+                author: 'Prashant & Ananya Shah',
+                location: 'Kathmandu • Dec 2025'
+            },
+            {
+                text: '"Their team handled our 4-day destination wedding in Pokhara seamlessly. The 4K drone shots over Fewa Lake during our Swayamvar look like an international cinematic film. Exceptional artistry!"',
+                author: 'Siddharth & Ritika Rana',
+                location: 'Pokhara • Oct 2025'
+            },
+            {
+                text: '"The luxury photo album with gold embossing is our family’s prized heirloom. They didn’t just take photos; they documented our Newari heritage with true honor and style."',
+                author: 'Kiran & Smriti Shrestha',
+                location: 'Patan • Jan 2026'
+            }
+        ];
+
+        let currentTestimonial = 0;
+
+        function renderTestimonial(index) {
+            const item = testimonials[index];
+            document.getElementById('testimonial-text').innerText = item.text;
+            document.getElementById('testimonial-author').innerText = item.author;
+            document.getElementById('testimonial-location').innerText = item.location;
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            renderTestimonial(currentTestimonial);
+        }
+
+        function prevTestimonial() {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            renderTestimonial(currentTestimonial);
+        }
+
+        // 8. Booking Modal Logic & Form Handling
+        function openBookingModal(packageName = '') {
+            if (packageName) {
+                document.getElementById('modal-package-select').value = packageName;
+            }
+            document.getElementById('booking-modal').classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            closeBookingModal();
+            document.getElementById('confirmation-modal').classList.remove('hidden');
+        }
+
+        function closeConfirmationModal() {
+            document.getElementById('confirmation-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
